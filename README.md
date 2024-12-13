@@ -15,3 +15,35 @@ To predict a company’s financial stability (by analyzing various metrics) usin
 - Based on the sentiments, features will be determined, and the generative model will be built to predict different stability measures, such as stock prices.
 - Filling this gap will help from the consumer point of view, for example, when investing in a public company’s shares.
 
+**Progress**
+
+*Step 1: Data Collection*
+
+- Extracting discussions from Reddit and Twitter resulted in irrelevant or noisy data, such as off-topic posts and biased opinions, which may not accurately reflect broader market sentiment.
+- Both Reddit and Twitter have rate limits on API requests, restricting the volume of data collected, especially during peak stock market activity.
+- Gathering past stock data from Yahoo Finance revealed inconsistencies and gaps in historical data for some companies, complicating accurate comparisons between stock performance and online sentiment.
+
+*Step 2: Data Preprocessing*
+
+Reddit and Twitter Data (Unstructured Text)
+- Text Cleaning and Tokenization: Clean out unrelated posts, advertisements, links, and spam. Remove special characters and URLs. Break the text into words or tokens for easier analysis (tokenization).
+- Handling Stop Words: Remove common words (e.g., "the", "and", "is") that do not carry sentiment but appear frequently.
+- Lemmatization/Stemming: Reduce words to their base or root form (e.g., "running" becomes "run") to group similar words together.
+- Remove Noise: Identify and remove posts/tweets that are irrelevant, sarcastic, or misleading to prevent skewed sentiment.
+- Handle Duplicate Posts: Eliminate duplicate posts or comments (especially from bots or retweets) to avoid bias in sentiment or opinion trends.
+
+Yahoo Finance Data (Historical Stock Data)
+- Data Cleaning: Handle missing or inconsistent values: Stocks may have missing days due to holidays or incomplete trading days, which must be addressed (e.g., forward/backward filling missing data).
+- Outlier detection: Identify abnormal fluctuations or errors in the stock data (such as drastic, unexplained drops or spikes)
+
+*Step 3: Opinion Mining*
+Sentiment Analysis:
+- FinBERT Transformer Model: Analyze sentiment (positive, negative, neutral) from financial-related text.
+- Sentiment Labeling: Assign sentiment labels with confidence scores to each post, tweet, or news article.
+
+
+
+
+
+
+
